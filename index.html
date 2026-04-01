@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Gauri Belokar</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts: Syne (display) + DM Mono (code/accent) + DM Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="#home" class="nav-logo">GB<span class="dot">.</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <!-- Dark mode toggle -->
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+          >
+            <span class="toggle-icon" id="themeIcon">☀</span>
+          </button>
+          <!-- Hamburger (mobile) -->
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== HOME ===================== -->
+    <section id="home" class="section hero-section">
+      <div class="hero-content">
+        <!-- Status badge -->
+        <div class="hero-badge fade-in" data-delay="0">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+
+        <h1 class="hero-name fade-in" data-delay="1">
+          Gauri<br /><span class="name-accent">Belokar</span>
+        </h1>
+
+        <p class="hero-intro fade-in" data-delay="2">
+          Software Developer focused on building efficient and scalable
+          solutions using C++, Python, and Java. Experienced in AI applications,
+          automation tools, and database systems, with a strong foundation in
+          Data Structures and Algorithms.
+        </p>
+
+        <!-- Skills chips -->
+        <div class="skills-row fade-in" data-delay="3">
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">Machine Learning</span>
+          <span class="skill-chip">Computer Vision</span>
+          <span class="skill-chip">Docker</span>
+          <span class="skill-chip">Networking</span>
+          <span class="skill-chip">Linux</span>
+          <span class="skill-chip">OpenCV</span>
+          <span class="skill-chip">TensorFlow</span>
+          <span class="skill-chip">Git</span>
+        </div>
+
+        <div class="hero-cta fade-in" data-delay="4">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+
+      <!-- Decorative grid lines -->
+      <div class="hero-grid" aria-hidden="true">
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="scroll-hint fade-in" data-delay="5">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-label">Selected work</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Face Recognition -->
+          <article class="project-card scroll-reveal" data-delay="0">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-number">01</span>
+                <div class="card-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">OpenCV</span>
+                  <span class="tag">Deep Learning</span>
+                </div>
+              </div>
+              <h3 class="card-title">Face Recognition System</h3>
+              <p class="card-desc">
+                Real-time face detection and recognition pipeline using OpenCV
+                and a custom-trained deep learning model. Handles multiple faces
+                simultaneously with sub-100ms latency on standard hardware.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-sm btn-ghost"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+                View Code
+              </a>
+              <a href="#" class="btn btn-sm btn-outline-sm">Live Demo</a>
+            </div>
+          </article>
+
+          <!-- Project 2: Robot Pathfinding -->
+          <article class="project-card scroll-reveal" data-delay="1">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-number">02</span>
+                <div class="card-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Algorithms</span>
+                  <span class="tag">Simulation</span>
+                </div>
+              </div>
+              <h3 class="card-title">Robot Pathfinding Simulation</h3>
+              <p class="card-desc">
+                Visual simulation of autonomous robot navigation using A*,
+                Dijkstra, and BFS algorithms on dynamic grid maps. Supports
+                obstacle placement, real-time path recalculation, and
+                performance benchmarking across algorithms.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-sm btn-ghost"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+                View Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Docker App -->
+          <article class="project-card scroll-reveal" data-delay="2">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-number">03</span>
+                <div class="card-tags">
+                  <span class="tag">Docker</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Nginx</span>
+                  <span class="tag">PostgreSQL</span>
+                </div>
+              </div>
+              <h3 class="card-title">Docker-Based Microservice App</h3>
+              <p class="card-desc">
+                Containerized multi-service application with Nginx reverse
+                proxy, PostgreSQL database, and a Python Flask API. Docker
+                Compose manages orchestration, environment isolation, and
+                inter-service networking.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-sm btn-ghost"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+                View Code
+              </a>
+              <a href="#" class="btn btn-sm btn-outline-sm">Live Demo</a>
+            </div>
+          </article>
+
+          <!-- Project 4: ML Model -->
+          <article class="project-card scroll-reveal" data-delay="3">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-number">04</span>
+                <div class="card-tags">
+                  <span class="tag">TensorFlow</span>
+                  <span class="tag">Scikit-learn</span>
+                  <span class="tag">Pandas</span>
+                </div>
+              </div>
+              <h3 class="card-title">ML Predictive Model Pipeline</h3>
+              <p class="card-desc">
+                End-to-end machine learning pipeline for structured data
+                prediction. Covers data cleaning, feature engineering, model
+                training with cross-validation, hyperparameter tuning, and a
+                REST API for inference.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-sm btn-ghost"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+                View Code
+              </a>
+            </div>
+          </article>
+        </div>
+        <!-- /projects-grid -->
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="about-inner">
+          <div class="about-left scroll-reveal">
+            <span class="section-label">Background</span>
+            <h2 class="section-title">About Me</h2>
+          </div>
+
+          <div class="about-right scroll-reveal" data-delay="1">
+            <p class="about-text">
+              I am a Software Developer with a strong foundation in Data
+              Structures and Algorithms, primarily working with C++, Python, and
+              Java. I build practical software solutions including AI-powered
+              applications, automation tools, and database-driven systems.
+            </p>
+            <p class="about-text">
+              My work includes projects in machine learning and computer vision,
+              where I focus on solving real-world problems through efficient and
+              structured implementations. I pay attention to writing clean,
+              maintainable code and designing systems that are reliable and
+              scalable.
+            </p>
+            I am also expanding into Android development, building mobile
+            applications to broaden my development capabilities and create
+            end-to-end solutions.
+            <p class="about-text"></p>
+            <p class="about-text">
+              I am continuously improving my skills by building projects and
+              learning new technologies with a focus on practical application
+              rather than theory.
+            </p>
+
+            <div class="focus-list">
+              <div class="focus-item">
+                <span class="focus-bullet">→</span>
+                <span>Machine Learning & Computer Vision</span>
+              </div>
+              <div class="focus-item">
+                <span class="focus-bullet">→</span>
+                <span>Data Structures & Algorithms (C++) </span>
+              </div>
+              <div class="focus-item">
+                <span class="focus-bullet">→</span>
+                <span>Backend Development & Databases</span>
+              </div>
+              <div class="focus-item">
+                <span class="focus-bullet">→</span>
+                <span>Android Application Development</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-label">Get in touch</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+
+        <div class="contact-inner">
+          <!-- Left: links -->
+          <div class="contact-links scroll-reveal">
+            <a href="mailto:alex@example.com" class="contact-item">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">gauribelokar2005@gmail.com</span>
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener"
+              class="contact-item"
+            >
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">https://github.com/gauri-create</span>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener"
+              class="contact-item"
+            >
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value"
+                >https://www.linkedin.com/in/gauribelokar/</span
+              >
+            </a>
+          </div>
+
+          <!-- Right: form -->
+          <form
+            class="contact-form scroll-reveal"
+            data-delay="1"
+            id="contactForm"
+            novalidate
+          >
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="What's on your mind?"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Send Message
+            </button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="footer-name">Alex Mercer</span>
+        <span class="footer-copy">Built with HTML, CSS &amp; JS</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
