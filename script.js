@@ -122,53 +122,59 @@
 
 
 /* ─── 6. CONTACT FORM (UI feedback only — no backend) ────────── */
+/* ─── 6. CONTACT FORM (Netlify AJAX Submission) ────────── */
 (function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const note = document.getElementById('formNote');
+  const form = document.getElementById('contactForm'); // Matches id="contactForm"
+  const note = document.getElementById('formNote');    // Matches id="formNote"
 
   if (!form) return;
 
   form.addEventListener('submit', (e) => {
-    e.preventDefault(); // no backend
+    e.preventDefault(); // Prevents the default page reload
 
-    const name    = form.name.value.trim();
-    const email   = form.email.value.trim();
-    const message = form.message.value.trim();
-
-    // Simple validation
-    if (!name || !email || !message) {
-      showNote('Please fill in all fields.', false);
-      return;
-    }
-
-    // Crude email check
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showNote('Please enter a valid email address.', false);
-      return;
-    }
-
-    // Simulate submission
     const btn = form.querySelector('button[type="submit"]');
+    const formData = new FormData(form);
+
+    // UI Feedback: Disable button and show "Sending..."
     btn.textContent = 'Sending…';
     btn.disabled = true;
 
-    setTimeout(() => {
-      form.reset();
-      btn.textContent = 'Send Message';
-      btn.disabled = false;
-      showNote('Message sent! I\'ll get back to you soon.', true);
-    }, 1000);
+    // Send the data to Netlify via a POST request
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then((response) => {
+        if (response.ok) {
+          form.reset();
+          showNote("Message sent! I'll get back to you soon.", true);
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch((error) => {
+        showNote("Oops! Something went wrong. Please try again.", false);
+      })
+      .finally(() => {
+        // Re-enable button after 1 second
+        setTimeout(() => {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+        }, 1000);
+      });
   });
 
   function showNote(msg, success) {
     note.textContent = msg;
-    note.style.color = success
-      ? 'var(--text-muted)'
-      : '#e55a5a';
+    // Uses your CSS variables for a consistent look
+    note.style.color = success ? 'var(--text-muted)' : '#e55a5a';
 
-    // Clear after 5s
+    // Clear the notification after 5 seconds
     clearTimeout(note._timer);
-    note._timer = setTimeout(() => { note.textContent = ''; }, 5000);
+    note._timer = setTimeout(() => {
+      note.textContent = '';
+    }, 5000);
   }
 })();
 
